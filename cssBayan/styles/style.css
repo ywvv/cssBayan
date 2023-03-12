@@ -1,0 +1,110 @@
+body {
+    background-image: url("../assets/bg.jpeg");
+    background-size: contain;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.title {
+    width: fit-content;
+    margin: 1rem auto 0;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    color: #01b4bb;
+    background-color: #ffffff;
+    border-radius: 0.8rem 0.8rem 0 0;
+    box-shadow: 0 0 0.8rem rgb(0 0 0 / 20%);
+}
+
+.wrapper {
+    max-width: 35rem;
+    margin: 0 auto;
+    border-radius: 0.7rem;
+    box-shadow: 0 0 0.8rem rgb(0 0 0 / 20%);
+    background-color: white;
+    padding: 0.5rem;
+}
+
+.memes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.memes__item {
+    background-color: #01b4bb;
+    color: #ce3939;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.meme__wrapper {
+    cursor: pointer;
+}
+
+.meme__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.meme__title {
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+.meme__arrow {
+    opacity: 0;
+    width: 0.6rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.meme__content {
+    display: flex;
+    justify-content: center;
+    background-color: #01b4bb;
+    height: 0;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.meme__image {
+    margin: 0 0.5rem 0.5rem;
+    box-shadow: 0 0 0.8rem rgb(0 0 0 / 20%);
+    border-radius: 0.3rem;
+}
+
+.meme__input {
+    width: 0;
+    height: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.meme__input:checked ~ .meme__content,
+.memes__item:hover .meme__content {
+    height: 10rem;
+    opacity: 1;
+}
+
+.meme__input:checked ~ .meme__header > .meme__arrow,
+.memes__item:hover .meme__arrow {
+    transform: rotate(180deg);
+}
+
+.memes:hover .meme__arrow {
+    opacity: 100%;
+}
+
+.meme__input:checked ~ .meme__header,
+.memes:hover .meme__title {
+    color: #ffffff;
+}
+
+.memes__item:active .meme__title {
+    color: #ce3939;
+}
+
+.memes__item:active .meme__arrow {
+    filter: invert(85%) sepia(77%) saturate(5527%) hue-rotate(338deg) brightness(99%) contrast(93%);
+}
