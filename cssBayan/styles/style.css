@@ -84,19 +84,15 @@ body {
     transform: rotate(180deg);
 }
 
-.meme__input:checked ~ .meme__header {
-    color: #ffffff;
-}
-
-.memes__item:active .meme__title {
-    color: #ce3939;
-}
+/*.meme__input:checked ~ .meme__header {*/
+/*    color: #ffffff;*/
+/*}*/
 
 .memes__item:active .meme__arrow {
     filter: invert(85%) sepia(77%) saturate(5527%) hue-rotate(338deg) brightness(99%) contrast(93%);
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) {
     .meme__wrapper {
         cursor: pointer;
     }
@@ -171,4 +167,8 @@ body {
             opacity: 1;
         }
     }
+}
+
+.memes__item:active .meme__title {
+    color: #ce3939;
 }
